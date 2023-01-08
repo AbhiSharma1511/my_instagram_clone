@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itmProfile"
+        android:icon="@drawable/ic_baseline_person_gray"
+        android:title="Profile"/>
+
+    <item
+        android:id="@+id/itmCamera"
+        android:icon="@drawable/ic_baseline_photo_camera_24"
+        android:title="Profile"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/itmSetting"
+        android:icon="@drawable/ic_baseline_settings_gray"
+        android:title="Setting" />
+
+    <item
+        android:id="@+id/itmPostImage"
+        android:icon="@drawable/ic_baseline_post_add_black"
+        android:title="Post Image"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/itmLogout"
+        android:icon="@drawable/ic_baseline_logout_gray"
+        android:title="Log Out"/>
+
+</menu>

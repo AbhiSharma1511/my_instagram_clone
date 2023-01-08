@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Instagram</string>
+    <string name="new_user">New User? <b>Sign Up</b></string>
+    <string name="existing_user">Existing User☺, <b>Login</b></string>
+</resources>
