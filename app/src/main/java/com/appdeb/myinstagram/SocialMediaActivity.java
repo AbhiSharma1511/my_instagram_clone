@@ -3,6 +3,8 @@ package com.appdeb.myinstagram;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -18,6 +20,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+
+import com.appdeb.myinstagram.Adapters.TabAdapter;
+import com.appdeb.myinstagram.databinding.ActivityMainBinding;
+import com.google.android.material.tabs.TabLayout;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -29,17 +35,67 @@ import java.io.ByteArrayOutputStream;
 
 public class SocialMediaActivity extends AppCompatActivity {
 
+    private ActivityMainBinding binding;
+
+    private ViewPager viewPager;
+    private Toolbar toolbar;
+    private TabAdapter tabAdapter;
+    private TabLayout tabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        binding = ActivityMainBinding.inflate(getLayoutInflater());
+//        setContentView(binding.getRoot());
         setContentView(R.layout.activity_main);
+        setTitle("Instagram☺");
+
+        toolbar = findViewById(R.id.myToolbar);
+        setSupportActionBar(toolbar);
+
+        viewPager = findViewById(R.id.viewPager);
+        tabAdapter = new TabAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(tabAdapter);
+
+        tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager,true);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /******************************************* Menu **************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.main_menu,menu);
-
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -66,8 +122,8 @@ public class SocialMediaActivity extends AppCompatActivity {
 
         }
         else if (item.getItemId() == R.id.itmLogout){
-            Intent intent = new Intent(SocialMediaActivity.this, LoginActivity.class);
             ParseUser.logOut();
+            Intent intent = new Intent(SocialMediaActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         }
@@ -134,4 +190,5 @@ public class SocialMediaActivity extends AppCompatActivity {
 
         }
     }
+
 }
