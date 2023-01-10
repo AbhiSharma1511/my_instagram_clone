@@ -22,6 +22,7 @@ import android.view.MenuItem;
 
 
 import com.appdeb.myinstagram.Adapters.TabAdapter;
+import com.appdeb.myinstagram.MenuActivities.Setting;
 import com.appdeb.myinstagram.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.parse.ParseException;
@@ -61,38 +62,7 @@ public class SocialMediaActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager,true);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /******************************************* Menu **************************************************/
+/******************************************* Menu **************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu,menu);
@@ -113,13 +83,12 @@ public class SocialMediaActivity extends AppCompatActivity {
             }
         }
         else if (item.getItemId() == R.id.itmProfile){
-
         }
         else if (item.getItemId() == R.id.itmCamera){
-
+            openCamera();
         }
         else if (item.getItemId() == R.id.itmSetting){
-
+            startActivity(new Intent(SocialMediaActivity.this, Setting.class));
         }
         else if (item.getItemId() == R.id.itmLogout){
             ParseUser.logOut();
@@ -131,6 +100,13 @@ public class SocialMediaActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void openCamera() {
+
+    }
+
+
+
+/******************************************* Request Permission For the user ******************************/
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -142,13 +118,15 @@ public class SocialMediaActivity extends AppCompatActivity {
         }
     }
 
+
+
+/********************************************* Choosing Image from the Gallery ****************************/
     private void captureImage() {
 
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent,4000);
 
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -187,7 +165,6 @@ public class SocialMediaActivity extends AppCompatActivity {
             }catch (Exception e){
                 e.printStackTrace();
             }
-
         }
     }
 

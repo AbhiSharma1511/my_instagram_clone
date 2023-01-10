@@ -10,4 +10,6 @@
     <color name="gray">#939292</color>
     <color name="gray_500">#555555</color>
     <color name="black_gray">#222222</color>
+    <color name="sky_blue">#1E88E5</color>
+    <color name="blue">#0C2AEA</color>
 </resources>

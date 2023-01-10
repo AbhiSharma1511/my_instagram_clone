@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="40dp"
     tools:context=".Fragments.ProfileTab">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/edtProfileName"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="Enter Your Profile Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edtBio"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@+id/edtProfileName"
+        android:ems="10"
+        android:hint="Enter Your Bio"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edtProfession"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="Enter Your Profession"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/edtBio"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edtHobbies"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="Enter Your Hobbies"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/edtProfession"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edtSports"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="Enter Your Favorite Sport"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:layout_below="@id/edtHobbies"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Info"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/edtSports"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

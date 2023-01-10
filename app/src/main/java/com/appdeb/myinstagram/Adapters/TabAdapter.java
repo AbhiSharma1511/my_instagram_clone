@@ -53,7 +53,7 @@ public class TabAdapter extends FragmentPagerAdapter {
             case 1:
                 return "Users";
             case 2:
-                return "SharePicture";
+                return "Share Picture";
             default:
                 return null;
 
