@@ -24,6 +24,10 @@
         app:showAsAction="always"/>
 
     <item
+        android:id="@+id/itmInsta"
+        android:icon="@drawable/ic_baseline_logout_gray"
+        android:title="Official Instagram"/>
+    <item
         android:id="@+id/itmLogout"
         android:icon="@drawable/ic_baseline_logout_gray"
         android:title="Log Out"/>

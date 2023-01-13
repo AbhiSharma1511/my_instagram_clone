@@ -87,13 +87,13 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void done(ParseException e) {
                     if (e == null) {
-                        FancyToast.makeText(SignUpActivity.this, "Sign Up Successful " + user.getUsername() + "☺", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                        FancyToast.makeText(SignUpActivity.this, "Sign Up Successful " + user.getUsername() + "☺", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, false).show();
                         Intent intent1 = new Intent(SignUpActivity.this, LoginActivity.class);
                         startActivity(intent1);
                         progressDialog.dismiss();
                         finish();
                     } else {
-                        FancyToast.makeText(SignUpActivity.this, "Error: " + e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
+                        FancyToast.makeText(SignUpActivity.this, "Error: " + e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
                         progressDialog.dismiss();
                     }
                 }

@@ -15,11 +15,16 @@
         android:roundIcon="@drawable/insta_vector"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyInstagram">
-
+        <activity
+            android:name=".UsersPosts"
+            android:exported="false" />
+        <activity
+            android:name=".OfficialInstagram"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MenuActivities.Setting"
             android:exported="false" />
-
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -30,16 +35,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SocialMediaActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-
         <activity
             android:name=".LoginActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />

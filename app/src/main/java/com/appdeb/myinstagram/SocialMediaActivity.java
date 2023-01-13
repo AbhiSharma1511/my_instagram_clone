@@ -49,7 +49,9 @@ public class SocialMediaActivity extends AppCompatActivity {
 //        binding = ActivityMainBinding.inflate(getLayoutInflater());
 //        setContentView(binding.getRoot());
         setContentView(R.layout.activity_main);
-        setTitle("Instagram☺");
+
+        final ParseUser user = ParseUser.getCurrentUser();
+        setTitle((CharSequence) user.getUsername()+" 🧡");
 
         toolbar = findViewById(R.id.myToolbar);
         setSupportActionBar(toolbar);
@@ -83,6 +85,9 @@ public class SocialMediaActivity extends AppCompatActivity {
             }
         }
         else if (item.getItemId() == R.id.itmProfile){
+        }
+        else if (item.getItemId() == R.id.itmInsta){
+//            startActivity(new Intent(SocialMediaActivity.this,OfficialInstagram.class));
         }
         else if (item.getItemId() == R.id.itmCamera){
             openCamera();

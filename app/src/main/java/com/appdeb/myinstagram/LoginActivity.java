@@ -77,17 +77,17 @@ public class LoginActivity extends AppCompatActivity {
             public void done(ParseUser user, ParseException e) {
                 if (user != null && e == null) {
                     if (user.getBoolean("emailVerified")) {
-                        FancyToast.makeText(LoginActivity.this, user.getUsername() + " logged in ☺", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                        FancyToast.makeText(LoginActivity.this, user.getUsername() + " logged in ☺", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, false).show();
                         Intent intent = new Intent(LoginActivity.this, SocialMediaActivity.class);
                         progressDialog.dismiss();
                         startActivity(intent);
                         finish();
                     }else{
-                        FancyToast.makeText(LoginActivity.this, "Please verified email first!", FancyToast.LENGTH_LONG, FancyToast.WARNING, true).show();
+                        FancyToast.makeText(LoginActivity.this, "Please verified email first!", FancyToast.LENGTH_LONG, FancyToast.WARNING, false).show();
                         progressDialog.dismiss();
                     }
                 } else {
-                    FancyToast.makeText(LoginActivity.this, "Error: " + e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
+                    FancyToast.makeText(LoginActivity.this, "Error: " + e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
                     progressDialog.dismiss();
                 }
             }
